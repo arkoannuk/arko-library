@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Library</title>
+  <link rel="icon" href="../assets/book.png">
+</head>
+
+<body>
+  <div class="container py-4 px-3 mx-auto">
+    <h1>Library</h1>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bookFormModal">Add
+      Book</button>
+  </div>
+
+  <div class="container d-flex">
+    <div class="row" id="bookList">
+      <template id="bookCardTemplate">
+        <div data-index="" class="bookCard card m-1" style="width: 16rem;">
+          <div class="card-body">
+            <h5 class="bookTitle card-title"></h5>
+            <p class="bookAuthor card-text fst-italic"></p>
+            <p class="bookWords card-text words">
+              <span class="bookStatus badge text-bg-secondary ms-1"></span>
+            </p>
+            <button type="button" class="bookDelete btn btn-danger btn-sm ">Delete</button>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="bookFormModal" tabindex="-1" aria-labelledby="bookFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="bookFormModalLabel">Book Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="bookForm">
+            <div class="mb-3">
+              <label for="bookTitle" class="form-label">Title</label>
+              <input type="text" class="form-control" id="bookTitle">
+            </div>
+            <div class="mb-3">
+              <label for="bookAuthor" class="form-label">Author</label>
+              <input type="text" class="form-control" id="bookAuthor">
+            </div>
+            <div class="mb-3">
+              <label for="bookWords" class="form-label">Nr. of Words</label>
+              <input type="number" class="form-control" id="bookWords">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="bookStatus" value="Test">
+              <label class="form-check-label" for="bookStatus">Book Read?</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
